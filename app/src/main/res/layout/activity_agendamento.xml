@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/beautyguysagenda"
+    android:orientation="vertical"
+    tools:context=".AgendamentoActivity">
+
+    <TextView
+        android:id="@+id/txtNome5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="Data escolhida:"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtData"
+        app:layout_constraintStart_toStartOf="@+id/txtNome" />
+
+    <TextView
+        android:id="@+id/txtData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="37dp"
+        android:text="receberData"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNome"
+        app:layout_constraintStart_toEndOf="@+id/txtNome5" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="13dp"
+        android:text="Nome"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNome"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textview" />
+
+    <TextView
+        android:id="@+id/txtNome3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="22dp"
+        android:text="Fone"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtFone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtFone"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="57dp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNome4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNome3"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+    <TextView
+        android:id="@+id/txtNome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="13dp"
+        android:text="Email "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="15dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtNome2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNome2" />
+
+    <TextView
+        android:id="@+id/txtNome4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:text="Sexo"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/chbMasc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome3" />
+
+    <CheckBox
+        android:id="@+id/chbOutro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Outros"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chbFem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chbFem" />
+
+    <CheckBox
+        android:id="@+id/chbMasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Masculino"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chbFem"
+        app:layout_constraintEnd_toStartOf="@+id/chbFem"
+        app:layout_constraintStart_toEndOf="@+id/txtNome4" />
+
+    <CheckBox
+        android:id="@+id/chbFem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="14dp"
+        android:text="Feminino"
+        app:layout_constraintEnd_toStartOf="@+id/chbOutro"
+        app:layout_constraintStart_toEndOf="@+id/chbMasc"
+        app:layout_constraintTop_toBottomOf="@+id/txtFone" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn"
+        android:text="Confirmar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome4" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chbOutro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

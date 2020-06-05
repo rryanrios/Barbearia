@@ -1,116 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgound"
+    android:background="@drawable/beautyguys2"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/btnProf"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
-        android:scaleType="center"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintBottom_toTopOf="@+id/btnLigar"
-        app:layout_constraintStart_toEndOf="@+id/btnServicos" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <ImageButton
-        android:id="@+id/btnPromo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
-        android:scaleType="center"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintBottom_toTopOf="@+id/btnWp"
-        app:layout_constraintStart_toEndOf="@+id/btnProf" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:padding="10px">
 
-    <ImageButton
-        android:id="@+id/btnPont"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="15dp"
-        android:scaleType="center"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageButton
+            android:id="@+id/btnServicos"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/botoes_home"
+            android:onClick="abrirServicos"
+            android:src="@drawable/servico" />
 
-    <ImageButton
-        android:id="@+id/btnLoc"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="15dp"
-        android:scaleType="center"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnPont" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-    <ImageView
-        android:id="@+id/imageView"
+        <ImageButton
+            android:id="@+id/btnProf"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/botoes_home"
+            android:onClick="abrirProfissional"
+            android:src="@drawable/profissionais" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnLoc"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/botoes_home"
+            android:src="@drawable/local" />
+
+    </LinearLayout>
+
+    <Space
         android:layout_width="0dp"
-        android:layout_height="264dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fototopo" />
+        android:layout_height="15dp" />
 
-    <ImageButton
-        android:id="@+id/btnLigar"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="15dp"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnLoc"
-        app:srcCompat="@drawable/telefone"
-        android:contentDescription="TODO" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
 
-    <ImageButton
-        android:id="@+id/btnWp"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnLigar" />
+        <ImageButton
+            android:id="@+id/btnLigar"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="90dp"
+            android:background="@drawable/botoes_home"
+            android:src="@drawable/contato" />
 
-    <ImageButton
-        android:id="@+id/btnAgenda"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/botoes_home"
-        android:scaleType="fitCenter"
-        android:scaleX="1"
-        android:scaleY="1"
-        app:layout_constraintBottom_toTopOf="@+id/btnPont"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_insert_invitation_black_24dp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-    <ImageButton
-        android:id="@+id/btnServicos"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
-        android:scaleType="center"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintBottom_toTopOf="@+id/btnLoc"
-        app:layout_constraintStart_toEndOf="@+id/btnAgenda" />
+        <ImageButton
+            android:id="@+id/btnNav"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/botoes_home"
+            android:src="@drawable/navegador" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>

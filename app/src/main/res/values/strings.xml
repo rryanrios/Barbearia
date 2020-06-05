@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Barbearia</string>
+    <string name="app_name">BeautyGuys</string>
     <string name="service_name">Serviços</string>
     <string name="agenda_name">Agenda</string>
+    <string name="profissionais_name">Profissionais</string>
+    <string name="agendamento_name">Agendar Serviço</string>
+    <string name="dias_disponiveis">Dias disponiveis</string>
+    <string name="selecionar_dia">Selecionar</string>
+    <string name="voltar_agenda">Voltar</string>
 </resources>

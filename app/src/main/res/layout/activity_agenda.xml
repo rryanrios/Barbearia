@@ -1,44 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/beautyguysagenda"
     android:orientation="vertical"
     tools:context=".AgendaActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/myDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="48dp"
-        android:text="Dias disponiveis"
+        android:text="@string/dias_disponiveis"
         android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="23sp" />
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <LinearLayout
+    <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="#fff">
-
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></CalendarView>
-    </LinearLayout>
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <Button
-        android:background="@drawable/bg_btn"
-        android:id="@+id/button"
-        android:layout_width="110dp"
+        android:id="@+id/btnSelec"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="CONFIRMAR" />
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_btn"
+        android:text="@string/selecionar_dia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_btn"
+        android:text="@string/voltar_agenda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

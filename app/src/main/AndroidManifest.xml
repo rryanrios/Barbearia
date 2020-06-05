@@ -9,13 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ServicosActivity"
-            android:label="@string/service_name" >
-        </activity>
-        <activity android:name=".LocalizacaoActivity" />
-        <activity android:name=".AgendaActivity"
-            android:label="@string/agenda_name" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".AgendamentoActivity"
+            android:label="@string/agendamento_name"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ServicosActivity"
+            android:label="@string/service_name"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".AgendaActivity"
+            android:label="@string/agenda_name"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".ProfissionaisActivity"
+            android:label="@string/profissionais_name"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
