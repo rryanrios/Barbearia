@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".HistoricoActivity"
+            android:label="@string/historico"
+            android:screenOrientation="locked"/>
+        <activity
+            android:name=".PerfisProfissionaisActivity"
+            android:label="@string/nossos_profissionais"
+            android:screenOrientation="locked" />
         <activity
             android:name=".AgendamentoActivity"
             android:label="@string/agendamento_name"

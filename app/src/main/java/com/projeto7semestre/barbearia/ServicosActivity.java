@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.projeto7semestre.barbearia.funcionario.Funcionario;
+
 public class ServicosActivity extends AppCompatActivity {
 
     ImageButton btn1, btn2, btn3, btn4, btn5;
@@ -24,44 +26,42 @@ public class ServicosActivity extends AppCompatActivity {
         btn4 = findViewById(R.id.btn4);
         btn5 = findViewById(R.id.btn5);
 
+        //Adicionar seta voltar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //Fim
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ServicosActivity.this, AgendaActivity.class);
-                startActivity(it);
+                enviarDados("Corte Simples","20,00","30 minutos");
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ServicosActivity.this, AgendaActivity.class);
-                startActivity(it);
+                enviarDados("Corte + Lavagem","40,00","1 hora");
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ServicosActivity.this, AgendaActivity.class);
-                startActivity(it);
+                enviarDados("Barba","30,00","30 minutos");
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ServicosActivity.this, AgendaActivity.class);
-                startActivity(it);
+                enviarDados("Corte + Barba","60,00","1 hora");
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ServicosActivity.this, AgendaActivity.class);
-                startActivity(it);
+                enviarDados("Corte Personalizado","60,00","1 hora");
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
@@ -71,5 +71,18 @@ public class ServicosActivity extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //Enviar informações para classe funcionario
+    public void enviarDados(String servico, String preco, String tempoServico) {
+        Funcionario servicos = new Funcionario();
+        servicos.setServicoEscolhido(servico);
+        servicos.setPreco(preco);
+        servicos.setTempoServico(tempoServico);
+
+        Intent it = new Intent(this, ProfissionaisActivity.class);
+        it.putExtra("servicos", servicos);
+        startActivity(it);
+        finish();
     }
 }
