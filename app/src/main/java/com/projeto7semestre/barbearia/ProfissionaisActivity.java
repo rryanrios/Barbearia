@@ -30,7 +30,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
     TextView txtData, receberData;
     ImageButton abrirAgenda;
     CheckBox checkBox1, checkBox2, checkBox3;
-    LinearLayout selectProfissional, selectProfissional2, selectProfissional3;
+    LinearLayout selectProfissional1, selectProfissional2, selectProfissional3;
     Button btnConfirm;
 
     int id = 0;
@@ -49,7 +49,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
         checkBox1 = findViewById(R.id.checkBox1);
         checkBox2 = findViewById(R.id.checkBox2);
         checkBox3 = findViewById(R.id.checkBox3);
-        selectProfissional = findViewById(R.id.selectProfissional);
+        selectProfissional1 = findViewById(R.id.selectProfissional1);
         selectProfissional2 = findViewById(R.id.selectProfissional2);
         selectProfissional3 = findViewById(R.id.selectProfissional3);
 
@@ -71,7 +71,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
                 if (checkBox1.isChecked()) {
                     servicos.setCheckbox(1);
                     id = 1;
-                    selectProfissional.setVisibility(View.VISIBLE);
+                    selectProfissional1.setVisibility(View.VISIBLE);
                     selectProfissional2.setVisibility(View.INVISIBLE);
                     selectProfissional3.setVisibility(View.INVISIBLE);
                     checkBox2.setChecked(false);
@@ -87,7 +87,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
                 if (checkBox2.isChecked()) {
                     servicos.setCheckbox(2);
                     id = 2;
-                    selectProfissional.setVisibility(View.INVISIBLE);
+                    selectProfissional1.setVisibility(View.INVISIBLE);
                     selectProfissional2.setVisibility(View.VISIBLE);
                     selectProfissional3.setVisibility(View.INVISIBLE);
                     checkBox1.setChecked(false);
@@ -103,7 +103,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
                 if (checkBox3.isChecked()) {
                     servicos.setCheckbox(3);
                     id = 3;
-                    selectProfissional.setVisibility(View.INVISIBLE);
+                    selectProfissional1.setVisibility(View.INVISIBLE);
                     selectProfissional2.setVisibility(View.INVISIBLE);
                     selectProfissional3.setVisibility(View.VISIBLE);
                     checkBox1.setChecked(false);
@@ -125,7 +125,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
             checkBox1.setChecked(true);
             if(checkBox1.isChecked()){
                 id = 1;
-                selectProfissional.setVisibility(View.VISIBLE);
+                selectProfissional1.setVisibility(View.VISIBLE);
                 selectProfissional2.setVisibility(View.INVISIBLE);
                 selectProfissional3.setVisibility(View.INVISIBLE);
                 checkBox2.setChecked(false);
@@ -135,7 +135,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
             checkBox2.setChecked(true);
             if (checkBox2.isChecked()) {
                 id = 2;
-                selectProfissional.setVisibility(View.INVISIBLE);
+                selectProfissional1.setVisibility(View.INVISIBLE);
                 selectProfissional2.setVisibility(View.VISIBLE);
                 selectProfissional3.setVisibility(View.INVISIBLE);
                 checkBox1.setChecked(false);
@@ -145,7 +145,7 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
             checkBox3.setChecked(true);
             if (checkBox3.isChecked()) {
                 id = 3;
-                selectProfissional.setVisibility(View.INVISIBLE);
+                selectProfissional1.setVisibility(View.INVISIBLE);
                 selectProfissional2.setVisibility(View.INVISIBLE);
                 selectProfissional3.setVisibility(View.VISIBLE);
                 checkBox1.setChecked(false);
@@ -184,14 +184,15 @@ public class ProfissionaisActivity extends AppCompatActivity implements AdapterV
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        if(servicos.getTempoServico().equals("1 hora")){
+            int pos = 15;
+            Object item = adapter.getItem(pos);
+            adapter.remove((CharSequence) item);
+            spinner.setAdapter(adapter);
+        }
         //Fim Spinner
 
     } //Fim OnCreate
-
-    //Pegar data atual do sistema
-    SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
-    Date data = new Date();
-    String dataFormatada = formataData.format(data);
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

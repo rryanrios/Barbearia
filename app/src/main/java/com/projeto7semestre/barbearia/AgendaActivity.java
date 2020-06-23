@@ -3,16 +3,21 @@ package com.projeto7semestre.barbearia;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.projeto7semestre.barbearia.funcionario.Funcionario;
+
+import java.util.Calendar;
 
 public class AgendaActivity extends AppCompatActivity {
 
@@ -39,8 +44,11 @@ public class AgendaActivity extends AppCompatActivity {
         calendarView = (CalendarView) findViewById(R.id.calendarView);
         myDate = (TextView) findViewById(R.id.myDate);
 
+
         //Bloqueia dias anteriores ao atual
-        calendarView.setMinDate(System.currentTimeMillis() - 1000);
+        Calendar cal=Calendar.getInstance();
+        cal.add(cal.DAY_OF_MONTH,1);
+        calendarView.setMinDate(cal.getTimeInMillis());
 
         //Calendario
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

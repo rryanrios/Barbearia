@@ -55,54 +55,134 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:saveEnabled="true"
-        android:text="Guilherme"
+        android:text="Rafa Alves"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <LinearLayout
-        android:id="@+id/selectProfissional"
+        android:id="@+id/selectProfissional1"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginStart="7dp"
+        android:padding="4dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="7dp"
-        android:background="@drawable/perfilricardo"
-        android:orientation="horizontal"
+        android:background="@drawable/layout_shadow_white"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        tools:visibility="visible" />
+        tools:visibility="visible" >
+
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pic1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/profissinal1" />
+
+            <ImageView
+                android:id="@+id/circle_crop1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/circulo" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cartaoricardo" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/selectProfissional2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="7dp"
-        android:background="@drawable/perfilrian"
+        android:padding="4dp"
         android:orientation="horizontal"
+        android:background="@drawable/layout_shadow_white"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        tools:visibility="visible" />
+        tools:visibility="visible" >
+
+    <FrameLayout
+        android:id="@+id/frame2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pic2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/profissinal2" />
+
+        <ImageView
+            android:id="@+id/circle_crop2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/circulo" />
+
+    </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cartaorian" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/selectProfissional3"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="7dp"
-        android:background="@drawable/perfilguilherme"
+        android:background="@drawable/layout_shadow_white"
+        android:padding="4dp"
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        tools:visibility="visible" />
+        tools:visibility="visible" >
+
+        <FrameLayout
+            android:id="@+id/frame3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pic3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/profissinal3" />
+
+            <ImageView
+                android:id="@+id/circle_crop3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/circulo" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cartaorafa" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtData"
@@ -112,7 +192,7 @@
         android:layout_marginTop="45dp"
         android:text="@string/selecione_a_data"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectProfissional" />
+        app:layout_constraintTop_toBottomOf="@+id/selectProfissional1" />
 
     <ImageButton
         android:id="@+id/abrirAgenda"
@@ -122,7 +202,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/ic_date_range_black_24dp"
         app:layout_constraintStart_toEndOf="@+id/txtData"
-        app:layout_constraintTop_toBottomOf="@+id/selectProfissional" />
+        app:layout_constraintTop_toBottomOf="@+id/selectProfissional1" />
 
     <TextView
         android:id="@+id/textView"
@@ -171,6 +251,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="45dp"
         app:layout_constraintStart_toEndOf="@+id/abrirAgenda"
-        app:layout_constraintTop_toBottomOf="@+id/selectProfissional" />
+        app:layout_constraintTop_toBottomOf="@+id/selectProfissional1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

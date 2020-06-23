@@ -24,7 +24,7 @@
     <EditText
         android:id="@+id/txtNome"
         android:layout_width="0dp"
-        android:hint="Fulano de tal"
+        android:hint="Nome"
         android:layout_height="43dp"
         android:layout_marginEnd="12dp"
         android:inputType="textPersonName"
